@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,9 +57,33 @@ ol.refs{padding-left:22px}
 ol.refs li{margin-bottom:8px}
 footer{padding:30px 0;color:var(--mute);font-size:.85rem;border-top:1px solid var(--line)}
 @media(max-width:760px){.two{grid-template-columns:1fr}.flow div::after{display:none}.chain .q,.chain .t,.chain .s{font-size:1.7rem}}
+
+.ph{border:2px dashed var(--teal);border-radius:14px;min-height:210px;display:grid;place-items:center;text-align:center;color:var(--mute);padding:16px;background:repeating-linear-gradient(135deg,#f4f9f9 0 12px,#eaf4f3 12px 24px)}
+.ph small{display:block;margin-top:6px;font-size:.8rem}
+.fig{margin:0}.fig img{width:100%;border-radius:14px;display:block}
+.fig figcaption{font-size:.8rem;color:var(--mute);margin-top:6px;font-style:italic}
+#pb{position:fixed;top:0;left:0;height:3px;width:0;background:var(--teal);z-index:9}
+.sp{padding:1px 7px;margin-left:6px;font-size:.8rem;border-width:1px;vertical-align:middle}
+button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.lab{display:grid;grid-template-columns:minmax(240px,360px) 1fr;gap:30px;align-items:center;margin-top:26px}
+.lab svg{width:100%;height:auto}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--mute);margin:8px 0 14px}
+.leg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.bar{height:12px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar b{display:block;height:100%;width:100%;background:var(--teal)}
+.stt{font:700 1.35rem Charter,Georgia,serif;color:var(--navy);margin:6px 0}
+input[type=range]{width:100%;accent-color:var(--teal);margin:6px 0 12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chip{padding:4px 12px;border-radius:20px;border:1.5px solid var(--navy);font-weight:700;font-size:.85rem;opacity:.3;transition:opacity .3s,background .3s}
+.chip.on{opacity:1;background:var(--navy);color:#fff}
+#cap{min-height:3.2em;color:var(--ink);background:var(--soft);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:.92rem}
+.dgrid{display:grid;grid-template-columns:1fr minmax(180px,260px);gap:18px;align-items:start}
+.dgrid .ph{min-height:170px}
+.two2{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:start}
+@media(max-width:760px){.lab,.dgrid,.two2{grid-template-columns:1fr}}
 @page{size:A4 landscape;margin:12mm}
 @media print{
- body{font-size:10.5pt}nav,.tools,#detail,.hint{display:none}
+ body{font-size:10.5pt}nav,.tools,#detail,.hint,#pb,.sp,.ctl{display:none}
  section{padding:14px 0;break-inside:avoid}
  .hero{padding:10px 0}.pb{break-before:page}
  table{min-width:0;font-size:9pt}.wrap{overflow:visible}
@@ -69,6 +94,7 @@ footer{padding:30px 0;color:var(--mute);font-size:.85rem;border-top:1px solid va
 </style>
 </head>
 <body>
+<div id="pb"></div>
 <nav><div><a href="#portada">Portada</a><a href="#intro">Introducción</a><a href="#matriz">Matriz clínica</a><a href="#fisio">Pathophysiology</a><a href="#educacion">Patient education</a><a href="#conclusion">Conclusión</a><a href="#refs">Referencias</a></div></nav>
 <main>
 
@@ -77,7 +103,8 @@ footer{padding:30px 0;color:var(--mute);font-size:.85rem;border-top:1px solid va
  <div class="chain"><span class="q">“Me falta el aire.”</span><span class="ar">→</span><span class="t">Dyspnea</span><span class="ar">→</span><span class="s">Disnea</span></div>
  <h1 style="font-size:2.3rem;margin:0 0 4px">Bilingual Digital Clinical Guide: <span class="en">Asthma</span></h1>
  <p class="lead">Patient Communication and Pathophysiology · Actividad 4 · Inglés Técnico</p>
- <dl class="cover">
+ <figure class="fig hero-fig"><div class="ph"><span>🖼️ Insertar imagen aquí<br><small>Imagen de portada: ilustración académica de las vías aéreas / asma</small></span></div><figcaption>[Pie de figura y fuente]</figcaption></figure>
+ <dl class="cover" style="margin-top:22px">
   <div><dt>Grupo</dt><dd>[Nombre del grupo]</dd></div>
   <div><dt>Integrantes</dt><dd>[Integrante 1] · [Integrante 2] · [Integrante 3] · [Integrante 4]</dd></div>
   <div><dt>Carrera</dt><dd>Medicina</dd></div>
@@ -115,27 +142,36 @@ footer{padding:30px 0;color:var(--mute);font-size:.85rem;border-top:1px solid va
   <div><b>5. Consequences</b>Exacerbations, hypoxemia in severe attacks, airway remodeling if poorly controlled.</div>
   <div><b>6. Why treatment matters</b>Inhaled corticosteroids control inflammation; bronchodilators relieve acute symptoms; avoid triggers.</div>
  </div>
- <div class="two">
-  <svg viewBox="0 0 340 190" role="img" aria-label="Esquema de vía aérea normal frente a vía aérea asmática">
-   <g text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#1d2733">
-    <circle cx="85" cy="80" r="62" fill="#9fc3d8"/><circle cx="85" cy="80" r="50" fill="#fff"/>
-    <text x="85" y="170">Vía aérea normal</text>
-    <circle cx="255" cy="80" r="62" fill="#14365c"/><circle cx="255" cy="80" r="46" fill="#e08a8a" opacity=".55"/><circle cx="255" cy="80" r="20" fill="#fff"/>
-    <circle cx="249" cy="76" r="4" fill="#12877f"/><circle cx="262" cy="84" r="3" fill="#12877f"/>
-    <text x="255" y="170">Vía aérea en asma</text>
-   </g>
+ <div class="lab">
+  <svg viewBox="0 0 300 300" role="img" aria-label="Corte transversal de una vía aérea que se estrecha al aumentar la severidad">
+   <circle cx="150" cy="150" r="125" fill="#14365c"/>
+   <circle id="muc" cx="150" cy="150" r="100" fill="#e59a9a"/>
+   <circle id="lum" cx="150" cy="150" r="95" fill="#fff"/>
+   <g id="mu" fill="#12877f"></g>
   </svg>
-  <p>Esquema simplificado (elaboración propia): en el asma la pared se engrosa por inflamación y edema, el músculo liso se contrae y el moco ocupa parte de la luz. El resultado es menor flujo de aire, sobre todo al espirar.</p>
+  <div>
+   <p style="margin:0 0 4px"><b>Laboratorio de la vía aérea.</b> Mueve el control o elige un desencadenante y observa qué cambia.</p>
+   <div class="leg"><span><i style="background:#14365c"></i>Músculo liso (se contrae)</span><span><i style="background:#e59a9a"></i>Mucosa inflamada (edema)</span><span><i style="background:#12877f"></i>Moco</span></div>
+   <div class="stt" id="st">Vía aérea normal</div>
+   <input type="range" id="sv" min="0" max="100" value="0" aria-label="Severidad de la crisis">
+   <div>Flujo de aire relativo (proporcional a r⁴): <b id="fl">100%</b></div>
+   <div class="bar"><b id="fb"></b></div>
+   <div class="chips" aria-label="Síntomas activos"><span class="chip" data-t="20">Cough</span><span class="chip" data-t="35">Wheezing</span><span class="chip" data-t="55">Chest tightness</span><span class="chip" data-t="65">Dyspnea</span></div>
+   <div class="tools ctl"><button data-g="80" data-c="Allergen → IgE-mediated mast-cell activation → histamine and leukotrienes → smooth-muscle contraction, edema and mucus.">Alérgeno</button><button data-g="75" data-c="Cold, dry air and hyperventilation → mucosal cooling and drying → mediator release → bronchoconstriction (EIB).">Ejercicio / aire frío</button><button data-g="65" data-c="Viral infection → epithelial damage and inflammation → bronchial hyperresponsiveness.">Infección viral</button><button data-g="5" data-c="Treatment: bronchodilators relax smooth muscle; inhaled corticosteroids reduce inflammation.">Tratamiento</button></div>
+   <div id="cap" aria-live="polite">Esquema didáctico: la relación entre radio y flujo es una simplificación (ley de Poiseuille).</div>
+  </div>
  </div>
+ <figure class="fig "><div class="ph"><span>🖼️ Insertar imagen aquí<br><small>Figura 1: imagen académica (vía aérea normal vs. asma). Citar la fuente</small></span></div><figcaption>[Pie de figura y fuente]</figcaption></figure>
 </section>
 
 <section id="educacion">
  <h2>Patient Education Message</h2>
- <div class="msg">
+ <div class="two2"><div class="msg">
   <p style="margin-top:0">Carlos, lo que usted tiene se llama <span class="en">asthma</span> (asma). Es un problema de los tubos por donde entra y sale el aire de los pulmones: están inflamados y, cuando algo los irrita, se estrechan. Por eso aparecen la tos, el silbido en el pecho y la falta de aire.</p>
   <p>El asma tiene tratamiento. Use su inhalador como se lo indicó su médico, aun cuando se sienta bien, y evite lo que le provoca síntomas (polvo, humo, aire muy frío). No necesita dejar el ejercicio; hable con su médico para hacerlo de forma segura.</p>
   <div class="alarm"><b>Busque atención urgente si:</b> no puede hablar frases completas, el inhalador de rescate no le alivia, se le ponen los labios azulados o la falta de aire empeora rápidamente.</div>
  </div>
+ <figure class="fig "><div class="ph"><span>🖼️ Insertar imagen aquí<br><small>Imagen: uso correcto del inhalador / signos de alarma</small></span></div><figcaption>[Pie de figura y fuente]</figcaption></figure></div>
 </section>
 
 <section id="conclusion">
@@ -167,16 +203,33 @@ const L=["Expresión del paciente","Término médico (EN)","Traducción (ES)","F
 const tb=document.querySelector("#tb tbody"),det=document.getElementById("detail");
 D.forEach((r,i)=>{const tr=document.createElement("tr");
  r.forEach((c,j)=>{const td=document.createElement("td");td.textContent=c;
-  if(j==0)td.className="q";if(j==1)td.className="en";
+  if(j==0)td.className="q";if(j==1){td.className="en";}
+  if(j==1&&window.speechSynthesis){const b=document.createElement("button");b.className="sp";b.textContent="🔊";b.setAttribute("aria-label","Escuchar "+c);b.onclick=e=>{e.stopPropagation();const u=new SpeechSynthesisUtterance(c);u.lang="en-US";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)};td.appendChild(b)}
   if(j>0)td.classList.add("hide");tr.appendChild(td)});
  tr.onclick=e=>{document.querySelectorAll("tbody tr").forEach(x=>x.classList.remove("sel"));tr.classList.add("sel");
   if(e.target.classList.contains("hide"))e.target.classList.add("on");
-  det.innerHTML="<ol>"+r.map((c,j)=>"<li><b>"+L[j]+"</b>"+c+"</li>").join("")+"</ol>"};
+  det.innerHTML="<div class=\"dgrid\"><ol>"+r.map((c,j)=>"<li><b>"+L[j]+"</b>"+c+"</li>").join("")+"</ol><figure class=\"fig\"><div class=\"ph\"><span>🖼️ Insertar imagen aquí<br><small>"+r[1]+"</small></span></div><figcaption>[Pie de figura y fuente]</figcaption></figure></div>"};
  tb.appendChild(tr)});
 const bd=document.getElementById("bd");
 bd.onclick=()=>{const on=bd.getAttribute("aria-pressed")!="true";bd.setAttribute("aria-pressed",on);
  document.querySelector(".wrap").classList.toggle("defense",on)};
 document.getElementById("br").onclick=()=>document.querySelectorAll("td.on").forEach(x=>x.classList.remove("on"));
+const $=id=>document.getElementById(id),rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let s=0,raf;const mu=$("mu");
+for(let i=0;i<8;i++){const c=document.createElementNS("http://www.w3.org/2000/svg","circle");c.setAttribute("r",5);mu.appendChild(c)}
+function draw(){const r=95-45*s;$("lum").setAttribute("r",r);$("muc").setAttribute("opacity",.3+.65*s);
+ [...mu.children].forEach((c,i)=>{const a=i*Math.PI/4+.3,d=r-9;c.setAttribute("cx",150+d*Math.cos(a));c.setAttribute("cy",150+d*Math.sin(a));c.setAttribute("opacity",s>.45?Math.min(1,(s-.45)*4):0)});
+ const f=Math.round(100*Math.pow(r/95,4));$("fl").textContent=f+"%";$("fb").style.width=f+"%";
+ $("st").textContent=s<.2?"Vía aérea normal":s<.55?"Broncoconstricción leve":"Crisis asmática";
+ document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",s*100>=+c.dataset.t));
+ $("sv").value=s*100}
+function go(t,cap){cancelAnimationFrame(raf);$("cap").textContent=cap;
+ if(rm){s=t;draw();return}
+ (function st(){s+=(t-s)*.08;if(Math.abs(t-s)<.005){s=t}else raf=requestAnimationFrame(st);draw()})()}
+$("sv").oninput=e=>{cancelAnimationFrame(raf);s=e.target.value/100;draw()};
+document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>go(+b.dataset.g/100,b.dataset.c));
+draw();
+addEventListener("scroll",()=>{const d=document.documentElement;$("pb").style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+"%"},{passive:true});
 </script>
 </body>
 </html>
