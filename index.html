@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilingual Clinical Guide · Asthma</title>
+<style>
+:root{--navy:#14365c;--teal:#12877f;--ink:#1d2733;--paper:#fbfcfd;--line:#d5dde5;--soft:#e8f3f2;--mute:#5b6b7b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Charter,"Iowan Old Style",Georgia,serif;color:var(--navy);line-height:1.2}
+main{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:1.7rem;margin:0 0 6px}
+.lead{color:var(--mute);margin:0 0 22px;max-width:70ch}
+.en{color:var(--teal);font-weight:700}
+nav{position:sticky;top:0;background:var(--navy);z-index:5}
+nav div{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav a{color:#fff;text-decoration:none;opacity:.9}
+nav a:hover{opacity:1;text-decoration:underline}
+.hero{padding:56px 0 40px}
+.chain{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:6px 0 26px}
+.chain .q{font:italic 2.4rem/1.1 Charter,Georgia,serif;color:var(--navy)}
+.chain .ar{color:var(--teal);font-size:1.8rem}
+.chain .t{font:700 2.4rem/1.1 Charter,Georgia,serif;color:var(--teal)}
+.chain .s{font:2.4rem/1.1 Charter,Georgia,serif;color:var(--ink)}
+.cover{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 24px;border-left:4px solid var(--teal);padding:4px 0 4px 18px}
+.cover dt{font-size:.8rem;color:var(--mute)}
+.cover dd{margin:0 0 6px;font-weight:600}
+.profile{background:var(--soft);border-radius:10px;padding:16px 20px;margin-top:20px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+button{font:inherit;border:1.5px solid var(--navy);background:#fff;color:var(--navy);padding:7px 14px;border-radius:8px;cursor:pointer}
+button[aria-pressed=true]{background:var(--navy);color:#fff}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:.92rem}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px;font-weight:600}
+td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
+tbody tr{cursor:pointer}
+tbody tr:hover,tbody tr.sel{background:var(--soft)}
+td.q{font-style:italic}
+.defense td.hide{filter:blur(7px);user-select:none}
+.defense td.hide.on{filter:none}
+#detail{margin-top:18px;border:2px solid var(--teal);border-radius:12px;padding:16px 18px;background:#fff}
+#detail ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#detail li{padding:10px 14px;border-radius:8px;background:var(--soft)}
+#detail li b{display:block;font-size:.78rem;color:var(--mute);font-weight:600}
+#detail li+li::before{content:"↓";display:block;color:var(--teal);margin:-6px 0 2px;font-weight:700}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;counter-reset:s}
+.flow div{border:1.5px solid var(--navy);border-radius:10px;padding:12px;background:#fff;position:relative}
+.flow div b{display:block;color:var(--teal);margin-bottom:4px}
+.flow div:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--teal);font-weight:700;background:var(--paper);z-index:1}
+.two{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:28px;align-items:center;margin-top:26px}
+.msg{background:var(--soft);border-radius:12px;padding:20px 24px;max-width:75ch}
+.alarm{border-left:4px solid var(--navy);padding-left:14px;margin-top:14px}
+ol.refs{padding-left:22px}
+ol.refs li{margin-bottom:8px}
+footer{padding:30px 0;color:var(--mute);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:760px){.two{grid-template-columns:1fr}.flow div::after{display:none}.chain .q,.chain .t,.chain .s{font-size:1.7rem}}
+@page{size:A4 landscape;margin:12mm}
+@media print{
+ body{font-size:10.5pt}nav,.tools,#detail,.hint{display:none}
+ section{padding:14px 0;break-inside:avoid}
+ .hero{padding:10px 0}.pb{break-before:page}
+ table{min-width:0;font-size:9pt}.wrap{overflow:visible}
+ .defense td.hide{filter:none}
+ tr{break-inside:avoid}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<nav><div><a href="#portada">Portada</a><a href="#intro">Introducción</a><a href="#matriz">Matriz clínica</a><a href="#fisio">Pathophysiology</a><a href="#educacion">Patient education</a><a href="#conclusion">Conclusión</a><a href="#refs">Referencias</a></div></nav>
+<main>
+
+<section id="portada" class="hero" style="border-top:0">
+ <p class="hero-k" style="margin:0 0 8px;color:var(--mute)">De las palabras del paciente a la fisiopatología</p>
+ <div class="chain"><span class="q">“Me falta el aire.”</span><span class="ar">→</span><span class="t">Dyspnea</span><span class="ar">→</span><span class="s">Disnea</span></div>
+ <h1 style="font-size:2.3rem;margin:0 0 4px">Bilingual Digital Clinical Guide: <span class="en">Asthma</span></h1>
+ <p class="lead">Patient Communication and Pathophysiology · Actividad 4 · Inglés Técnico</p>
+ <dl class="cover">
+  <div><dt>Grupo</dt><dd>[Nombre del grupo]</dd></div>
+  <div><dt>Integrantes</dt><dd>[Integrante 1] · [Integrante 2] · [Integrante 3] · [Integrante 4]</dd></div>
+  <div><dt>Carrera</dt><dd>Medicina</dd></div>
+  <div><dt>Curso / Asignatura</dt><dd>[Curso] · Inglés Técnico</dd></div>
+  <div><dt>Docente</dt><dd>[Nombre del docente]</dd></div>
+  <div><dt>Universidad</dt><dd>UPDS, sede Santa Cruz</dd></div>
+ </dl>
+ <div class="profile"><b>Perfil del paciente (caso simulado):</b> varón de 19 años, universitario en Santa Cruz de la Sierra, con antecedente de rinitis alérgica. Consulta por tos que empeora de noche y falta de aire al hacer ejercicio.</div>
+</section>
+
+<section id="intro">
+ <h2>Introducción</h2>
+ <p class="lead">El paciente no dice “<span class="en">dyspnea</span>”: dice “me falta el aire”. Traducir esa frase a un término preciso, en inglés y en español, y vincularla con su mecanismo permite una anamnesis más exacta, una historia clínica comprensible para cualquier equipo de salud y una mejor educación del paciente.</p>
+ <p style="max-width:75ch"><b>Metodología breve.</b> Se eligió asma, patología frecuente de la lista autorizada. Se definió un perfil de paciente y se seleccionaron cinco síntomas típicos. Para cada uno se redactó la cadena completa (frase coloquial → término en inglés → traducción → fisiopatología → explicación sencilla), apoyada en guías clínicas y textos de fisiología <sup>[1–5]</sup>.</p>
+</section>
+
+<section id="matriz" class="pb">
+ <h2>Matriz de comunicación clínica</h2>
+ <p class="lead hint">Haz clic en una fila para ver su cadena paso a paso. Con “Modo defensa” se ocultan las columnas 2 a 5: intenta explicar la cadena y toca la celda para comprobar.</p>
+ <div class="tools"><button id="bd" aria-pressed="false">Modo defensa</button><button id="br">Reiniciar</button></div>
+ <div class="wrap"><table id="tb">
+  <thead><tr><th>Expresión del paciente</th><th>Término médico (EN)</th><th>Traducción (ES)</th><th>Fisiopatología técnica</th><th>Explicación sencilla</th></tr></thead>
+  <tbody></tbody></table></div>
+ <div id="detail"><b>Selecciona una fila para ver su cadena.</b></div>
+</section>
+
+<section id="fisio" class="pb">
+ <h2>Pathophysiology Summary</h2>
+ <p class="lead">Del factor desencadenante a la importancia del tratamiento <sup>[1,3,5]</sup>.</p>
+ <div class="flow">
+  <div><b>1. Trigger / risk factor</b>Allergens, viral infections, cold air, exercise, smoke. Predisposición atópica.</div>
+  <div><b>2. Organ affected</b>Bronchi and bronchioles (lower airways).</div>
+  <div><b>3. Pathophysiological change</b>Chronic airway inflammation (mast cells, eosinophils, Th2 cytokines) → bronchial hyperresponsiveness → smooth-muscle contraction, mucosal edema and mucus.</div>
+  <div><b>4. Signs and symptoms</b>Wheezing, dyspnea, cough, chest tightness; variables en el tiempo.</div>
+  <div><b>5. Consequences</b>Exacerbations, hypoxemia in severe attacks, airway remodeling if poorly controlled.</div>
+  <div><b>6. Why treatment matters</b>Inhaled corticosteroids control inflammation; bronchodilators relieve acute symptoms; avoid triggers.</div>
+ </div>
+ <div class="two">
+  <svg viewBox="0 0 340 190" role="img" aria-label="Esquema de vía aérea normal frente a vía aérea asmática">
+   <g text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#1d2733">
+    <circle cx="85" cy="80" r="62" fill="#9fc3d8"/><circle cx="85" cy="80" r="50" fill="#fff"/>
+    <text x="85" y="170">Vía aérea normal</text>
+    <circle cx="255" cy="80" r="62" fill="#14365c"/><circle cx="255" cy="80" r="46" fill="#e08a8a" opacity=".55"/><circle cx="255" cy="80" r="20" fill="#fff"/>
+    <circle cx="249" cy="76" r="4" fill="#12877f"/><circle cx="262" cy="84" r="3" fill="#12877f"/>
+    <text x="255" y="170">Vía aérea en asma</text>
+   </g>
+  </svg>
+  <p>Esquema simplificado (elaboración propia): en el asma la pared se engrosa por inflamación y edema, el músculo liso se contrae y el moco ocupa parte de la luz. El resultado es menor flujo de aire, sobre todo al espirar.</p>
+ </div>
+</section>
+
+<section id="educacion">
+ <h2>Patient Education Message</h2>
+ <div class="msg">
+  <p style="margin-top:0">Carlos, lo que usted tiene se llama <span class="en">asthma</span> (asma). Es un problema de los tubos por donde entra y sale el aire de los pulmones: están inflamados y, cuando algo los irrita, se estrechan. Por eso aparecen la tos, el silbido en el pecho y la falta de aire.</p>
+  <p>El asma tiene tratamiento. Use su inhalador como se lo indicó su médico, aun cuando se sienta bien, y evite lo que le provoca síntomas (polvo, humo, aire muy frío). No necesita dejar el ejercicio; hable con su médico para hacerlo de forma segura.</p>
+  <div class="alarm"><b>Busque atención urgente si:</b> no puede hablar frases completas, el inhalador de rescate no le alivia, se le ponen los labios azulados o la falta de aire empeora rápidamente.</div>
+ </div>
+</section>
+
+<section id="conclusion">
+ <h2>Conclusión</h2>
+ <p style="max-width:75ch">Una anamnesis bilingüe exige dos competencias: reconocer el lenguaje del paciente y convertirlo en terminología exacta (<span class="en">wheezing</span> ≠ “ruido en el pecho”), y devolverle una explicación que entienda. Esta guía muestra que cada síntoma coloquial remite a un mecanismo concreto, en este caso inflamación, broncoconstricción y obstrucción al flujo aéreo, y que comunicarlo bien contribuye a los ODS 3 (salud y bienestar) y 4 (educación de calidad).</p>
+</section>
+
+<section id="refs">
+ <h2>Referencias</h2>
+ <ol class="refs">
+  <li>Global Initiative for Asthma. Global strategy for asthma management and prevention, 2024 [Internet]. GINA; 2024 [citado 12 nov 2026]. Disponible en: https://ginasthma.org/2024-report/</li>
+  <li>Reddel HK, Bacharier LB, Bateman ED, Brightling CE, Brusselle GG, Buhl R, et al. Global Initiative for Asthma Strategy 2021: executive summary and rationale for key changes. Eur Respir J. 2022;59(1):2102730.</li>
+  <li>Hall JE, Hall ME. Guyton and Hall textbook of medical physiology. 14th ed. Philadelphia: Elsevier; 2020.</li>
+  <li>World Health Organization. Asthma [Internet]. Geneva: WHO; 2024 [citado 12 nov 2026]. Disponible en: https://www.who.int/news-room/fact-sheets/detail/asthma</li>
+  <li>Papi A, Brightling C, Pedersen SE, Reddel HK. Asthma. Lancet. 2018;391(10122):783-800.</li>
+ </ol>
+</section>
+<footer>Material académico con fines educativos. Caso clínico simulado. Imagen: esquema de elaboración propia.</footer>
+</main>
+
+<script>
+const D=[
+["“Me falta el aire.”","Dyspnea","Disnea","Airway inflammation and bronchoconstriction → increased airway resistance and expiratory airflow limitation → air trapping and greater work of breathing → dyspnea.","Los tubos por donde entra y sale el aire se inflaman y se estrechan. El aire pasa con dificultad y usted siente que no le alcanza."],
+["“Siento que me silba o me chilla el pecho.”","Wheezing","Sibilancias","Narrowed bronchi → turbulent, high-velocity airflow, mainly during expiration → vibration of airway walls → high-pitched musical sound (wheezing).","Cuando el aire tiene que pasar por tubos muy angostos, hace un silbido, como el aire que sale por la boca de un globo apenas abierta."],
+["“Toso mucho, sobre todo de noche.”","Nocturnal cough","Tos nocturna","Inflammatory mediators and mucus stimulate airway sensory nerves → reflex cough. Airway tone and inflammation peak at night (circadian variation) → nocturnal cough.","Las vías respiratorias inflamadas se irritan con facilidad. La tos es la forma en que el cuerpo intenta despejarlas, y de noche están más sensibles."],
+["“Siento el pecho apretado, como si tuviera un peso.”","Chest tightness","Opresión torácica","Bronchial smooth-muscle contraction and air trapping → lung hyperinflation → increased work of breathing → sensation of chest tightness.","Los músculos de los tubos se contraen y el aire queda atrapado en los pulmones. Por eso el pecho se siente apretado."],
+["“Cuando hago ejercicio me ahogo y empiezo a toser.”","Exercise-induced bronchoconstriction","Broncoconstricción inducida por el ejercicio","Hyperventilation cools and dries the airway mucosa → mast-cell mediator release (histamine, leukotrienes) → bronchoconstriction → dyspnea and cough.","Al respirar rápido y fuerte, el aire frío y seco irrita los tubos y estos se cierran. Por eso los síntomas aparecen durante o poco después del ejercicio."]];
+const L=["Expresión del paciente","Término médico (EN)","Traducción (ES)","Fisiopatología técnica","Explicación sencilla"];
+const tb=document.querySelector("#tb tbody"),det=document.getElementById("detail");
+D.forEach((r,i)=>{const tr=document.createElement("tr");
+ r.forEach((c,j)=>{const td=document.createElement("td");td.textContent=c;
+  if(j==0)td.className="q";if(j==1)td.className="en";
+  if(j>0)td.classList.add("hide");tr.appendChild(td)});
+ tr.onclick=e=>{document.querySelectorAll("tbody tr").forEach(x=>x.classList.remove("sel"));tr.classList.add("sel");
+  if(e.target.classList.contains("hide"))e.target.classList.add("on");
+  det.innerHTML="<ol>"+r.map((c,j)=>"<li><b>"+L[j]+"</b>"+c+"</li>").join("")+"</ol>"};
+ tb.appendChild(tr)});
+const bd=document.getElementById("bd");
+bd.onclick=()=>{const on=bd.getAttribute("aria-pressed")!="true";bd.setAttribute("aria-pressed",on);
+ document.querySelector(".wrap").classList.toggle("defense",on)};
+document.getElementById("br").onclick=()=>document.querySelectorAll("td.on").forEach(x=>x.classList.remove("on"));
+</script>
+</body>
+</html>
